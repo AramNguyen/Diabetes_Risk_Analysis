@@ -6,39 +6,20 @@ st.set_page_config(page_title="Diabetes Risk Assessment", layout="wide")
 
 st.markdown("""
     <style>
-    /* Ép nền trắng toàn bộ ứng dụng */
     .stApp { background-color: #FFFFFF !important; }
-    
-    /* Giấu header và footer mặc định của Streamlit */
     header { visibility: hidden !important; }
     footer { visibility: hidden !important; }
+    * { font-weight: normal !important; color: #000000 !important; }
     
-    /* Triệt tiêu mọi chữ in đậm VÀ ÉP MÀU ĐEN CHO MỌI LOẠI CHỮ */
-    * {
-        font-weight: normal !important;
-        color: #000000 !important;
-    }
-
-    
-    /* Canh me đúng cái khung nhập số: Nền trắng, viền đen thô, bo góc 0px */
     div[data-baseweb="input"] > div, 
     div[data-testid="stNumberInputContainer"] {
         background-color: #FFFFFF !important;
         border: 1px solid #000000 !important; 
         border-radius: 0px !important; 
     }
+    input { color: #000000 !important; }
+    div[data-testid="stNumberInputContainer"] button { display: none !important; }
     
-    /* Ép chữ gõ vào phải là màu đen */
-    input {
-        color: #000000 !important;
-    }
-
-    /* Bắn bỏ mọi nút bấm ẩn bên trong khung nhập số (phòng hờ) */
-    div[data-testid="stNumberInputContainer"] button {
-        display: none !important;
-    }
-    
-    /* Nút Analyze: Vuông vức, nền trắng viền đen */
     .stButton>button {
         border: 1px solid #000000 !important;
         background-color: #FFFFFF !important;
@@ -52,7 +33,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-@st.cache_resource
 def load_model():
     return joblib.load('diabetes_model.pkl')
 
@@ -82,18 +62,18 @@ with col3:
 st.write("") 
 
 if st.button("ANALYZE RISK", use_container_width=True):
-    input_data = pd.DataFrame(columns=model.feature_names_in_)
-    input_data.loc[0] = 0 
-    
-    input_data['age'] = age
-    input_data['bmi'] = bmi
-    input_data['waist_circumference_cm'] = waist
-    input_data['hours_sleep_per_night'] = sleep
-    input_data['blood_pressure_systolic'] = bp_sys
-    input_data['blood_pressure_diastolic'] = bp_dia
-    input_data['stress_level'] = stress
-    input_data['fasting_blood_sugar'] = blood_sugar
-    input_data['hba1c_level'] = hba1c
+    input_dict = {
+        'age': [age],
+        'bmi': [bmi],
+        'waist_circumference_cm': [waist],
+        'hours_sleep_per_night': [sleep],
+        'blood_pressure_systolic': [bp_sys],
+        'blood_pressure_diastolic': [bp_dia],
+        'stress_level': [stress],
+        'fasting_blood_sugar': [blood_sugar],
+        'hba1c_level': [hba1c]
+    }
+    input_data = pd.DataFrame(input_dict)
     
     prediction = model.predict(input_data)[0]
     

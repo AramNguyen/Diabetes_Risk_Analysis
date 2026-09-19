@@ -8,7 +8,7 @@
 [![Data Science](https://img.shields.io/badge/Data-Science-blue)](https://www.kaggle.com/)
 [![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)](https://scikit-learn.org/)
 
-> **⚠️ DISCLAIMER:** This repository is intended for educational and personal portfolio purposes only. It is **not** a substitute for professional medical advice, diagnosis, or treatment. If you feel unwell or experience any symptoms, please consult a qualified healthcare provider immediately instead of browsing GitHub.
+> **DISCLAIMER:** This repository is intended for educational and personal portfolio purposes only. It is **not** a substitute for professional medical advice, diagnosis, or treatment. If you feel unwell or experience any symptoms, please consult a qualified healthcare provider immediately instead of browsing GitHub.
 
 ## Demo Project
 <p align="center">

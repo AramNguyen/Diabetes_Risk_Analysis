@@ -10,22 +10,22 @@ End-to-End Machine Learning web application built for assessing diabetes risk le
 [![Data Science](https://img.shields.io/badge/Data-Science-blue)](https://www.kaggle.com/)
 [![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)](https://scikit-learn.org/)
 
-> **⚠️ DISCLAIMER:** Repository này chỉ mang tính chất học tập và làm đồ án cá nhân. Tuyệt đối **không** được dùng để thay thế cho sự chẩn đoán hoặc tư vấn y tế từ bác sĩ chuyên khoa. Nếu cơ thể cảm thấy không ổn hoặc có triệu chứng bất thường, vui lòng đến gặp cơ sở y tế gần nhất thay vì truy cập GitHub.
+> **⚠️ DISCLAIMER:** This repository is intended for educational and personal portfolio purposes only. It is **not** a substitute for professional medical advice, diagnosis, or treatment. If you feel unwell or experience any symptoms, please consult a qualified healthcare provider immediately instead of browsing GitHub.
 
 ## Demo Project
 <p align="center">
-  <!-- BỎ FILE GIF CỦA M VÀO ĐÂY (VD: ![Demo](assets/demo.gif)) -->
-  <img src="ĐƯỜNG_DẪN_TỚI_FILE_GIF_CỦA_M_Ở_ĐÂY" alt="App Demo" width="100%">
+  <!-- Insert your demo GIF here -->
+  <img src="assets/testrepo-ezgif.com-video-to-gif-converter.gif" alt="App Demo" width="100%">
 </p>
 
-## Lời Nhắn Nhủ
-Đây là project Machine Learning đầu tay của mình nên code cối, cách xử lý dữ liệu và cấu trúc còn khá non tay và nhiều điểm hạn chế. Mọi người xem cho vui chứ **không nên lấy làm tài liệu tham khảo chính thống** cho các dự án thực tế nhé!
+## Note from the Author
+This is my very first Machine Learning project, so the implementation, data preprocessing, and architecture are quite basic and imperfect. Please take it with a grain of salt and **do not use it as a formal reference** for production or real-world systems!
 
 ## File Structure
 ```text
 project-root/
 │
-├── app.py                  # [Điền mô tả nếu muốn]
-├── diabetes_model.pkl      # [Điền mô tả nếu muốn]
-├── requirements.txt        # [Điền mô tả nếu muốn]
-└── ...                     # [Tự điền thêm các file khác của m vào đây]
+├── app.py                  # [Tự điền mô tả]
+├── diabetes_model.pkl      # [Tự điền mô tả]
+├── requirements.txt        # [Tự điền mô tả]
+└── ...                     # [Tự điền thêm các file khác nếu có]

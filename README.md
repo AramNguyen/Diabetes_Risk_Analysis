@@ -1,8 +1,6 @@
 # Diabetes Risk Assessment System
 
-End-to-End Machine Learning web application built for assessing diabetes risk levels based on clinical and body metrics, styled with a raw, minimalist UI.
-
-## Badges
+**End-to-End Machine Learning web application built for assessing diabetes risk levels based on clinical and body metrics, styled with a raw, minimalist UI.**
 [![Mathematics & Computer Science](https://img.shields.io/badge/Mathematics%20%26%20Computer%20Science-Student-003B73)](https://www.hcmus.edu.vn/)
 [![Undergraduate](https://img.shields.io/badge/Undergraduate-Student-003B73)](https://www.hcmus.edu.vn/)
 [![Python](https://img.shields.io/badge/Python-Learning-6A0DAD?logo=python)](https://www.python.org/)
@@ -25,8 +23,10 @@ This is my very first Machine Learning project, so the implementation, data prep
 ```text
 Diabetes_Risk_Analysis/
 │
-├── app.py
-├── diabetes_model.pkl
-├── requirements.txt 
-├── assets/
+├── 00_diabetes-MAIN-DATASET.csv
+├── requirements.txt
+├── 01_main-data.ipynb
+├── 02_data-cleaned.csv
+├── 02_data-cleaning.csv
+├── 03_split-and-train.ipynb
 ├── 

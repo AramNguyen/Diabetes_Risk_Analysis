@@ -1,6 +1,6 @@
 # Diabetes Risk Assessment System
 
-**End-to-End Machine Learning web application built for assessing diabetes risk levels based on clinical and body metrics, styled with a raw, minimalist UI.**
+**End-to-End Machine Learning web application built for assessing diabetes risk levels based on clinical and body metrics.**
 
 [![Mathematics & Computer Science](https://img.shields.io/badge/Mathematics%20%26%20Computer%20Science-Student-003B73)](https://www.hcmus.edu.vn/)
 [![Undergraduate](https://img.shields.io/badge/Undergraduate-Student-003B73)](https://www.hcmus.edu.vn/)

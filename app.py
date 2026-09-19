@@ -2,20 +2,43 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# 1. Page Config (Clean, no emojis)
+# 1. Page Config
 st.set_page_config(page_title="Diabetes Risk Assessment", layout="wide")
 
-# Inject custom CSS to remove rounded corners for a raw, technical UI
+# CSS "Đập đi xây lại" - Giao diện trắng bóc, không khung viền
 st.markdown("""
     <style>
+    /* Ép nền trắng, chữ đen, giấu thanh header/footer mặc định */
+    .stApp { background-color: #FFFFFF !important; color: #000000 !important; }
+    header { visibility: hidden !important; }
+    footer { visibility: hidden !important; }
+    
+    /* Xóa nền và khung của ô nhập liệu, chỉ để lại gạch chân */
     div[data-baseweb="input"] > div {
+        border: none !important;
+        border-bottom: 1px solid #000000 !important;
         border-radius: 0px !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
     }
+    
+    /* Xóa nền khối slider */
+    div[data-baseweb="slider"] {
+        background-color: transparent !important;
+    }
+
+    /* Nút bấm thô sơ: viền đen, nền trắng */
     .stButton>button {
+        border: 1px solid #000000 !important;
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
         border-radius: 0px !important;
+        box-shadow: none !important;
+        font-weight: bold !important;
     }
-    div[data-baseweb="select"] > div {
-        border-radius: 0px !important;
+    .stButton>button:hover {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -27,33 +50,33 @@ def load_model():
 
 model = load_model()
 
-st.title("Diabetes Risk Assessment System")
-st.markdown("Enter medical metrics below to evaluate the diabetes risk level.")
-st.divider()
+# Header tối giản
+st.markdown("### DIABETES RISK ASSESSMENT SYSTEM")
+st.markdown("Enter medical metrics below.")
+st.write("") # Dòng trống thay cho đường kẻ
 
 # 3. Input Form
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.subheader("Body Metrics")
     age = st.number_input("Age", min_value=1, max_value=120, value=30)
     bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=22.5)
     waist = st.number_input("Waist Circumference (cm)", min_value=40.0, max_value=150.0, value=80.0)
     sleep = st.slider("Sleep Hours/Night", 0.0, 24.0, 7.0)
 
 with col2:
-    st.subheader("Blood Pressure")
     bp_sys = st.number_input("Systolic BP", min_value=70, max_value=200, value=120)
     bp_dia = st.number_input("Diastolic BP", min_value=40, max_value=130, value=80)
     stress = st.slider("Stress Level (1-10)", 1, 10, 5)
 
 with col3:
-    st.subheader("Blood Sugar")
     blood_sugar = st.number_input("Fasting Blood Sugar (mg/dL)", min_value=50, max_value=300, value=95)
     hba1c = st.number_input("HbA1c Level (%)", min_value=3.0, max_value=15.0, value=5.5)
 
+st.write("") 
+
 # 4. Prediction Logic
-if st.button("Analyze Risk", type="primary", use_container_width=True):
+if st.button("ANALYZE RISK", use_container_width=True):
     input_data = pd.DataFrame(columns=model.feature_names_in_)
     input_data.loc[0] = 0 
     
@@ -69,11 +92,11 @@ if st.button("Analyze Risk", type="primary", use_container_width=True):
     
     prediction = model.predict(input_data)[0]
     
-    st.divider()
+    st.write("")
+    # Dùng markdown in chữ thô thay vì dùng hộp màu st.success/st.error
     if prediction == 0:
-        st.success("RESULT: LOW RISK - Metrics are within a safe range.")
+        st.markdown("**RESULT: LOW RISK** - Metrics are within a safe range.")
     elif prediction == 1:
-        st.warning("RESULT: MODERATE RISK - Consider adjusting diet and lifestyle.")
+        st.markdown("**RESULT: MODERATE RISK** - Consider adjusting diet and lifestyle.")
     else:
-        st.error("RESULT: HIGH RISK - Please consult a healthcare professional for a detailed examination.")
-    
+        st.markdown("**RESULT: HIGH RISK** - Please consult a healthcare professional.")

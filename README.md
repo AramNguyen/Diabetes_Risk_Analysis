@@ -23,9 +23,10 @@ This is my very first Machine Learning project, so the implementation, data prep
 
 ## File Structure
 ```text
-project-root/
+Diabetes_Risk_Analysis/
 │
-├── app.py                  # [Tự điền mô tả]
-├── diabetes_model.pkl      # [Tự điền mô tả]
-├── requirements.txt        # [Tự điền mô tả]
-└── ...                     # [Tự điền thêm các file khác nếu có]
+├── app.py
+├── diabetes_model.pkl
+├── requirements.txt 
+├── assets/
+├── 

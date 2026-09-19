@@ -16,6 +16,9 @@
   <!-- Insert your demo GIF here -->
   <img src="assets/testrepo-ezgif.com-video-to-gif-converter.gif" alt="App Demo" width="100%">
 </p>
+<img width="1057" height="843" alt="image" src="https://github.com/user-attachments/assets/c76f2468-b6be-4675-aad2-7afb57aa8e58" />
+<img width="547" height="355" alt="image" src="https://github.com/user-attachments/assets/79c6bd93-12d0-47d3-be77-e2bd6f868684" />
+
 
 ## Note from the Author
 This is my very first Machine Learning project, so the implementation, data preprocessing, and architecture are quite basic and imperfect. Please take it with a grain of salt and **do not use it as a formal reference** for production or real-world systems!
